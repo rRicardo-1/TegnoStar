@@ -1,0 +1,51 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+#tblCategorias {
+    background-color: rgb(121, 155, 198);
+    color: black;
+}
+tr {
+    background-color: rgb(24, 80, 181);
+    color: black;
+}
+
+.fondo{
+    background-image:url(imagenes/fd1.png);
+    
+    
+}
+.fdprin {
+    background-image: url(imagenes/fd.png);
+}
+#tblProductos {
+    background-color: rgb(121, 155, 198);
+    color: black;
+}
+#tblSliders {
+    background-color: rgb(121, 155, 198);
+    color: black;
+}
+#tblProveedor {
+    background-color: rgb(121, 155, 198);
+    color: black;
+}

@@ -1,0 +1,18 @@
+﻿body {
+
+}
+tr {
+    background-color: rgb(6, 22, 146);
+    color: black;
+}
+th {
+    background-color: forestgreen;
+    color: white ;
+}
+.table-striped {
+   
+    color: black;
+}
+.table-bordered {
+    color: black;
+}

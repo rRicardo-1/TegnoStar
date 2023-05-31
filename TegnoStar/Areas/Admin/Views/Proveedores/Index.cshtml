@@ -1,0 +1,78 @@
+﻿
+<div class="fondo">
+    <div class="text-center">
+        <img src="~/css/imagenes/Proveedorestext.png" id="imagen" />
+    </div>
+
+
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col-8">
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/zncllhmn.json"
+                           trigger="loop"
+                           colors="primary:#ffffff"
+                           state="hover"
+                           style="width:70px;height:70px">
+                </lord-icon>
+            </div>
+            <div class="col-4 text-right">
+                <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i>Crear nuevo Proveedor</a>
+
+            </div>
+
+        </div>
+
+
+        <table id="tblProveedor" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                   @* <th>IdProveedor</th>*@
+                    <th>NombreEmpresa</th>
+                    <th>NombreContacto</th>
+                    <th>Teléfono</th>
+                    <th>Correo Electronico</th>
+                    <th>Direccion</th>
+                    <th>Activo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+        </table>
+
+
+    </div>
+</div>
+
+
+
+@*<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Detalle">
+    Launch demo modal
+</button>*@
+
+<!-- Modal -->
+<div class="modal fade" id="Detalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Detalle">Detalles De Proveedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="cuerpoModalProveedor">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/proveedorJS.js"></script>
+}

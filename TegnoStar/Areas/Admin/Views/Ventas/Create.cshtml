@@ -1,0 +1,66 @@
+﻿@model TegnoStar.Models.ViewModels.VentaVM
+
+@{
+    ViewData["Title"] = "Crear Venta";
+}
+
+<br />
+<br />
+<div class="container">
+    <form method="POST" asp-action="Create">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="@Model.Venta.Cliente" class="control-label"></label>
+                <input asp-for="@Model.Venta.Cliente" class="form-control" />
+                <span asp-validation-for="@Model.Venta.Cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="@Model.Venta.Descripcion" class="control-label"></label>
+                <input asp-for="@Model.Venta.Descripcion" class="form-control" />
+                <span asp-validation-for="@Model.Venta.Descripcion" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="@Model.Venta.Cantidad" class="control-label"></label>
+                <input asp-for="@Model.Venta.Cantidad" class="form-control" />
+                <span asp-validation-for="@Model.Venta.Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div>
+                    <label asp-for="@Model.Venta.ProductoId"></label>
+                </div>
+                <div>
+                    @Html.DropDownListFor(m => m.Venta.ProductoId, Model.ListaProductos,
+                    "-Por favor seleccione una categoria-", new { @class = "form-control" })
+                </div>
+                <span asp-validation-for="@Model.Venta.ProductoId" class="text-danger"></span>
+            </div>
+
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary w-100">Crear</button>
+                    </div>
+                    &nbsp;
+                    <div class="col">
+                        <a asp-action="Index" class="btn btn-success w-100">Volver a lista</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        
+
+    </form>
+</div>

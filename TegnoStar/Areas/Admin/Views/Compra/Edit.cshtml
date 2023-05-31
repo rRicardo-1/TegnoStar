@@ -1,0 +1,81 @@
+﻿@model TegnoStar.Models.ViewModels.CompraVM
+
+@{
+    ViewData["Title"] = "Editar Compra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<br />
+
+<div class="container">
+    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Compra.IdCompra" />
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <label asp-for="Compra.Descripcion" class="control-label"></label>
+                <textarea asp-for="Compra.Descripcion" class="form-control" style="height: 200px;"></textarea>
+                <span asp-validation-for="Compra.Descripcion" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div>
+                    <label asp-for="Compra.ProveedorId"></label>
+                </div>
+                <div>
+                    @Html.DropDownListFor(m => m.Compra.ProveedorId, Model.ListaProveedores,
+                   "-Porfavor seleccione un proveedor-", new { @class = "form-control" })
+                </div>
+                <span asp-validation-for="Compra.ProveedorId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div>
+                    <label asp-for="Compra.ProductosId"></label>
+                </div>
+                <div>
+                    @Html.DropDownListFor(m => m.Compra.ProductosId, Model.ListaProductos,
+                   "-Porfavor seleccione un producto-", new { @class = "form-control" })
+                </div>
+                <span asp-validation-for="Compra.ProductosId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="Compra.Precio_Compra" class="control-label"></label>
+                <input asp-for="Compra.Precio_Compra" class="form-control" />
+                <span asp-validation-for="Compra.Precio_Compra" class="text-danger"></span>
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="Compra.Cantidad" class="control-label"></label>
+                <input asp-for="Compra.Cantidad" class="form-control" />
+                <span asp-validation-for="Compra.Cantidad" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <label asp-for="Compra.Fecha_Compra" class="control-label"></label>
+                <input asp-for="Compra.Fecha_Compra" class="form-control" />
+                <span asp-validation-for="Compra.Fecha_Compra" class="text-danger"></span>
+            </div>
+
+        </div>
+        <br />
+        <div class="form-group row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary form-control">Actualizar</button>
+                        &nbsp;
+                    </div>
+                    <div class="col-4">
+                        <a asp-action="Inicio" class="btn btn-success form-control">Volver a lista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

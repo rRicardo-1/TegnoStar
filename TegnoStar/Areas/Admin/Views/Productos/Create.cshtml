@@ -1,0 +1,94 @@
+﻿@model TegnoStar.Models.ViewModels.ProductosVM
+
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+<br />
+<br />
+<h3 class="text-center">Crear Nuevo Producto</h3>
+<form method="POST" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>
+                        <label asp-for="@Model.Productos.Nombre"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Productos.Nombre" class="form-control" placeholder="Ingrese Nombre Del Producto" />
+                    <span asp-validation-for="@Model.Productos.Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>
+                        <label asp-for="@Model.Productos.Descripcion"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Productos.Descripcion" class="form-control" placeholder="Ingrese Descrpcion De Producto" />
+                    <span asp-validation-for="@Model.Productos.Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+
+              <div class="form-group row">
+                <div class="col-4">
+                    <label>
+                        <label asp-for="@Model.Productos.Precio"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Productos.Precio" class="form-control" placeholder="Ingrese El Precio Del Producto" />
+                    <span asp-validation-for="@Model.Productos.Precio" class="text-danger"></span>
+                </div>
+            </div>
+
+             <div class="form-group row">
+                <div class="col-4">
+                    <label>
+                        <label asp-for="@Model.Productos.Stock"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Productos.Stock" class="form-control" placeholder="Ingrese El Stock Del Producto" />
+                    <span asp-validation-for="@Model.Productos.Stock" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label for="Categoría">Categoría</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Productos.CategoriaId, Model.ListaCategorias,
+                    "-Por favor seleccione una categoría-", new { @class = "form-control" })
+                    <span asp-validation-for="@Model.Productos.CategoriaId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Productos.UrlImagen"></label>
+                </div>
+                <div class="col-8">
+                    <input type="file" name="archivos" id="subidaArchivo" multiple class="form-control" />
+                    <span asp-validation-for="@Model.Productos.UrlImagen" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-8">
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</form>
